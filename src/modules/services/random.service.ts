@@ -1,21 +1,33 @@
 import { HttpService } from "@nestjs/axios";
-import { Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable } from "@nestjs/common";
+import { InjectModel } from "@nestjs/mongoose";
 import { firstValueFrom } from "rxjs";
+import { Character } from "../database/schemas/character.schemas";
+import { Model } from "mongoose";
 
 
 interface IdCharacter {
-
     name:string;
     image:string;
     type:string;
 
 }
 
+interface IBody{
+    name:string,
+    image:string
+    type:string
+}
+
 @Injectable()
 export class CharacterService{
 
     constructor(
-        private readonly httpService: HttpService
+        private readonly httpService: HttpService,
+
+        @InjectModel(Character.name) 
+        private characterModel: Model<Character>
+
     ){}
     async getRandomCharacter(){
 
@@ -64,6 +76,54 @@ export class CharacterService{
             image:data.image.url,
             type:"Super Hero"
         }
+    }
+
+    async find(name:string){
+        const data = await this.characterModel.findOne({name})
+        if(!data){
+            throw new BadRequestException ("No existe en la base de datos")
+        }
+        return data
+    }
+
+
+    async like (body:IBody){
+        const {name, image, type} = body
+        const data = await this.characterModel.findOne({name})
+        if (!data){
+            const created = await this.characterModel.create({
+                name,
+                image,
+                type,
+                likes:1,
+                dislikes:0
+            })
+            return created
+        }
+
+        await data.updateOne ({likes: data.likes + 1})
+        return await this.characterModel.findOne ({name})
+
+    }
+
+    async dislike (body:IBody){
+
+        const {name, image, type} = body
+        const data = await this.characterModel.findOne({name})
+        if (!data){
+            const created = await this.characterModel.create({
+                name,
+                image,
+                type,
+                likes:0,
+                dislikes:1
+            })
+            return created
+        }
+
+        await data.updateOne ({dislikes: data.dislikes + 1})
+        return await this.characterModel.findOne ({name})
+
     }
 
 } 
