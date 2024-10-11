@@ -34,10 +34,11 @@ export class CharacterService{
         const functions = [
             this.getPokemon,
             this.getRickAndMorti,
-            this.getRickAndMorti
+            this.getSuperHero,
+            this.getNaruto
         ]
 
-        const functionToUse = functions [Math.floor(Math.random()*3)]
+        const functionToUse = functions [Math.floor(Math.random()*4)]
         const id = Math.floor(Math.random()*700)
         return functionToUse(id,this.httpService)
 
@@ -70,6 +71,16 @@ export class CharacterService{
             name:data.name,
             image:data.image.url,
             type:"Super Hero"
+        }
+    }
+
+    async getNaruto (id:number,http:HttpService):Promise<IdCharacter>{
+        const BASE_URL = `https://narutodb.xyz/api/character/${id}`
+        const {data} = await firstValueFrom(http.get(BASE_URL))
+        return{
+            name:data.name,
+            image:data.images,
+            type:"Naruto"
         }
     }
 
