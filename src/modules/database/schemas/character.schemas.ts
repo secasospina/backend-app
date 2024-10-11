@@ -3,7 +3,9 @@ import {Prop, Schema, SchemaFactory} from "@nestjs/mongoose"
 import {} from "mongoose"
 
 
-@Schema()
+@Schema({
+    timestamps:true
+})
 export class Character{
     @Prop ({type:String})
     name:string;

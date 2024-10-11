@@ -38,5 +38,20 @@ export class CharacterController {
         return await this.service.dislike(body)
     }
 
+    @Get('mos/dislikes')
+    async mosDislikes(){
+      return this.service.mosDisLike()
+    }
+  
+  
+    @Get('mos/likes')
+    async mosLikes(){
+      return this.service.mosLikes()
+    }
+  
+    @Get('last-evaluated')
+    async lastEvaluated(){
+      return this.service.lastEvaluated()
+    }
 
 }
