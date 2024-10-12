@@ -29,14 +29,6 @@ cd backend-app
 npm install
 
 2. Instala las dependencias:
-
   ```bash
 cd backend-app
 npm install
-
-
-
-
-
-   
-
