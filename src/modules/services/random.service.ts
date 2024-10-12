@@ -79,7 +79,7 @@ export class CharacterService{
         const {data} = await firstValueFrom(http.get(BASE_URL))
         return{
             name:data.name,
-            image:data.images,
+            image:data.images.length > 0? data.images [0] : "",
             type:"Naruto"
         }
     }
