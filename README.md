@@ -68,8 +68,10 @@ Espera a que se Apliquen los Cambios
 Puede tomar unos minutos para que la nueva regla de acceso de red se aplique completamente. Una vez hecho esto, tu clúster de MongoDB Atlas estará accesible desde cualquier dirección IP.
 Nota: En caso de que esta configuración no sea exitosa, deberás agregar la IP de la máquina en la que se ejecute, siguiendo los pasos mencionados anteriormente. Esta configuración está pensada para fines de prueba, pero en un proyecto en producción, por seguridad es recomendable configurar el acceso por medio de una dirección IP específica.
 
-##APIs Utilizadas
-API de Rick y Morty: https://rickandmortyapi.com/
-API de Pokémon: https://pokeapi.co/
-API de Superhéroes: https://superheroapi.com/
-API de Naruto: https://narutodb.xyz/
+## APIs Utilizadas
+
+- [API de Rick y Morty](https://rickandmortyapi.com/)
+- [API de Pokémon](https://pokeapi.co/)
+- [API de Superhéroes](https://superheroapi.com/)
+- [API de Naruto](https://narutodb.xyz/)
+
