@@ -24,34 +24,31 @@ Para ejecutar este proyecto localmente sigue estos pasos:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/secasospina/backend-app
-
-cd backend-app
-npm install
-
-2. Instala las dependencias:
    
-cd backend-app
-npm install
+2. Instala las dependencias:
+   ```bash
+   cd backend-app
+   npm install  
 
 3. Agrega tu archivo .env al proyecto.
 
 Recuerda crear un archivo .env donde deberás agregar los valores para el proyecto de backend-app. Configura tu base de datos en MongoDB Atlas, revisando el apartado de "Configurar MongoDB Atlas para Aceptar Solicitudes Desde Cualquier IP" que se encuentra a continuación.
 
 4. Ejecuta el servidor de desarrollo:
-
-yarn start:dev
+   ```bash
+   yarn start:dev
 
 (Si no tienes instaladas las dependencias: yarn install).
 
-##Documentación Postman
+## Documentación Postman
 Postman es una herramienta popular que facilita el desarrollo, prueba y documentación de APIs (interfaces de programación de aplicaciones). Es muy utilizada por desarrolladores para interactuar con APIs durante el desarrollo de software, ya que permite enviar solicitudes HTTP y ver las respuestas sin necesidad de crear un cliente o interfaz para hacer las solicitudes.
 
 Para acceder a la documentación de Postman, ejecuta la aplicación y accede a la siguiente dirección: http://localhost:3001/.
 
-##Configurar MongoDB Atlas para Aceptar Solicitudes Desde Cualquier IP
+## Configurar MongoDB Atlas para Aceptar Solicitudes Desde Cualquier IP
 Para permitir que tu base de datos MongoDB Atlas reciba solicitudes desde cualquier dirección IP, debes seguir los siguientes pasos para modificar tu lista de direcciones IP permitidas en la configuración de seguridad de red.
 
-##Pasos para Configurar el Acceso Desde Cualquier IP
+## Pasos para Configurar el Acceso Desde Cualquier IP
 Inicia Sesión en MongoDB Atlas
 Visita MongoDB Atlas y accede con tu cuenta.
 Selecciona tu Proyecto
