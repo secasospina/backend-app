@@ -25,3 +25,18 @@ Para ejecutar este proyecto localmente sigue estos pasos:
    ```bash
    git clone https://github.com/secasospina/backend-app
 
+cd backend-app
+npm install
+
+2. Instala las dependencias:
+
+  ```bash
+cd backend-app
+npm install
+
+
+
+
+
+   
+
