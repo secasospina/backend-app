@@ -29,6 +29,47 @@ cd backend-app
 npm install
 
 2. Instala las dependencias:
-  ```bash
+   
 cd backend-app
 npm install
+
+3. Agrega tu archivo .env al proyecto.
+
+Recuerda crear un archivo .env donde deberás agregar los valores para el proyecto de backend-app. Configura tu base de datos en MongoDB Atlas, revisando el apartado de "Configurar MongoDB Atlas para Aceptar Solicitudes Desde Cualquier IP" que se encuentra a continuación.
+
+4. Ejecuta el servidor de desarrollo:
+
+yarn start:dev
+
+(Si no tienes instaladas las dependencias: yarn install).
+
+##Documentación Postman
+Postman es una herramienta popular que facilita el desarrollo, prueba y documentación de APIs (interfaces de programación de aplicaciones). Es muy utilizada por desarrolladores para interactuar con APIs durante el desarrollo de software, ya que permite enviar solicitudes HTTP y ver las respuestas sin necesidad de crear un cliente o interfaz para hacer las solicitudes.
+
+Para acceder a la documentación de Postman, ejecuta la aplicación y accede a la siguiente dirección: http://localhost:3001/.
+
+##Configurar MongoDB Atlas para Aceptar Solicitudes Desde Cualquier IP
+Para permitir que tu base de datos MongoDB Atlas reciba solicitudes desde cualquier dirección IP, debes seguir los siguientes pasos para modificar tu lista de direcciones IP permitidas en la configuración de seguridad de red.
+
+##Pasos para Configurar el Acceso Desde Cualquier IP
+Inicia Sesión en MongoDB Atlas
+Visita MongoDB Atlas y accede con tu cuenta.
+Selecciona tu Proyecto
+Una vez que hayas iniciado sesión, estarás en la página de inicio de Atlas. Aquí selecciona el proyecto que contiene el clúster al que deseas permitir el acceso desde cualquier IP.
+Accede a la Configuración de Seguridad
+En el panel izquierdo busca la sección "Security" (Seguridad) y selecciona "Network Access" (Acceso de red).
+Añade una Nueva Regla de Dirección IP
+En la página de "Network Access" verás un botón que dice "Add IP Address" (Añadir dirección IP). Haz clic en él.
+Configura el Acceso Desde Cualquier IP
+En la ventana emergente, para permitir el acceso desde cualquier IP, introduce 0.0.0.0/0. Esta es una representación CIDR que engloba a todas las direcciones IP posibles.
+Confirma y Guarda
+Después de ingresar 0.0.0.0/0, puedes darle un nombre descriptivo a la regla si lo deseas y luego haz clic en "Confirm" (Confirmar) para guardar la nueva configuración.
+Espera a que se Apliquen los Cambios
+Puede tomar unos minutos para que la nueva regla de acceso de red se aplique completamente. Una vez hecho esto, tu clúster de MongoDB Atlas estará accesible desde cualquier dirección IP.
+Nota: En caso de que esta configuración no sea exitosa, deberás agregar la IP de la máquina en la que se ejecute, siguiendo los pasos mencionados anteriormente. Esta configuración está pensada para fines de prueba, pero en un proyecto en producción, por seguridad es recomendable configurar el acceso por medio de una dirección IP específica.
+
+##APIs Utilizadas
+API de Rick y Morty: https://rickandmortyapi.com/
+API de Pokémon: https://pokeapi.co/
+API de Superhéroes: https://superheroapi.com/
+API de Naruto: https://narutodb.xyz/
