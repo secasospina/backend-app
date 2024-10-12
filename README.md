@@ -1,82 +1,90 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+\title{Backend de Votación de Personajes}
+\author{}
+\date{}
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+\begin{document}
 
-## Description
+\maketitle
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+\section{Descripción}
+Este proyecto es el backend para la aplicación de votación de personajes, implementando funcionalidades clave para manejar la lógica de negocio, almacenamiento de datos y comunicación con el frontend. Utiliza tecnologías modernas como MongoDB Atlas, Next.js, TypeScript y Vite para ofrecer una solución robusta y escalable.
 
-## Project setup
+\section{Tecnologías Utilizadas}
+\begin{itemize}
+    \item \textbf{Next.js}: Utilizado para la creación de API routes que facilitan las operaciones CRUD y la lógica de votación.
+    \item \textbf{MongoDB Atlas}: Base de datos NoSQL en la nube que almacena información de personajes y votos. Se utiliza la capa gratuita para el almacenamiento de datos.
+    \item \textbf{TypeScript}: Lenguaje de programación tipado que mejora la confiabilidad y mantenibilidad del código.
+    \item \textbf{Mongoose}: Librería de ODM (Object Data Modeling) para MongoDB y Node.js, facilitando la interacción con la base de datos.
+    \item \textbf{Vite}: Utilizado como un builder o bundler para aplicaciones web, y en el caso específico de Vite con React se usa para crear y desarrollar proyectos React de manera rápida y eficiente.
+\end{itemize}
 
-```bash
-$ yarn install
-```
+\section{Características}
+\begin{itemize}
+    \item \textbf{Consumo de API}: Endpoints para gestionar personajes, votos y obtener estadísticas como el personaje más votado, entre otros. Además, se agrega la API de Naruto.
+    \item \textbf{Gestión de Personajes}: Permite agregar votaciones y buscar personajes.
+    \item \textbf{Votación}: Los usuarios pueden votar "me gusta" o "no me gusta" por los personajes.
+    \item \textbf{Estadísticas}: Calcula y devuelve el personaje con más votos positivos, negativos, y el último votado.
+\end{itemize}
 
-## Compile and run the project
+\section{Cómo Empezar}
+Para ejecutar este proyecto localmente sigue estos pasos:
 
-```bash
-# development
-$ yarn run start
+\begin{enumerate}
+    \item Clona el repositorio:
+    \begin{verbatim}
+    git clone https://github.com/secasospina/backend-app
+    \end{verbatim}
+    
+    \item Instala las dependencias:
+    \begin{verbatim}
+    cd backend-app
+    npm install
+    \end{verbatim}
 
-# watch mode
-$ yarn run start:dev
+    \item Agrega tu archivo \texttt{.env} al proyecto.
+    
+    Recuerda crear un archivo \texttt{.env} donde deberás agregar los valores para el proyecto de \texttt{backend-app}.
+    Configura tu base de datos en MongoDB Atlas, revisando el apartado de "Configurar MongoDB Atlas para Aceptar Solicitudes Desde Cualquier IP" que se encuentra a continuación.
+    
+    \item Ejecuta el servidor de desarrollo:
+    \begin{verbatim}
+    yarn start:dev
+    \end{verbatim}
+    (Si no tienes instaladas las dependencias: \texttt{yarn install}).
+\end{enumerate}
 
-# production mode
-$ yarn run start:prod
-```
+\section{Documentación Postman}
+Postman es una herramienta popular que facilita el desarrollo, prueba y documentación de APIs. Es muy utilizada por desarrolladores para interactuar con APIs durante el desarrollo de software, ya que permite enviar solicitudes HTTP y ver las respuestas sin necesidad de crear un cliente o interfaz.
 
-## Run tests
+Para acceder a la documentación de Postman, ejecuta la aplicación y accede a la siguiente dirección: \texttt{http://localhost:3001/}.
 
-```bash
-# unit tests
-$ yarn run test
+\section{Configurar MongoDB Atlas para Aceptar Solicitudes Desde Cualquier IP}
+Para permitir que tu base de datos MongoDB Atlas reciba solicitudes desde cualquier dirección IP, sigue estos pasos:
 
-# e2e tests
-$ yarn run test:e2e
+\begin{enumerate}
+    \item Inicia Sesión en MongoDB Atlas.
+    \item Selecciona tu proyecto.
+    \item Accede a la configuración de seguridad en la sección "Network Access".
+    \item Añade una nueva regla de dirección IP con \texttt{0.0.0.0/0} para permitir acceso desde cualquier IP.
+    \item Confirma y guarda los cambios.
+\end{enumerate}
 
-# test coverage
-$ yarn run test:cov
-```
+\textbf{Nota:} En un entorno de producción, es recomendable configurar la seguridad por dirección IP en lugar de permitir acceso desde cualquier IP.
 
-## Resources
+\section{APIs Utilizadas}
+\begin{itemize}
+    \item API de Rick y Morty: \url{https://rickandmortyapi.com/}
+    \item API de Pokémon: \url{https://pokeapi.co/}
+    \item API de Superhéroes: \url{https://superheroapi.com/}
+    \item API de Naruto: \url{https://narutodb.xyz/}
+\end{itemize}
 
-Check out a few resources that may come in handy when working with NestJS:
+\end{document}
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
