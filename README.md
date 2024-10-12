@@ -10,7 +10,15 @@ Implementamos una estructura de carpeta modular
 -**NestJS**
 
 ## Características
-- **Interacción con la API**: Se han implementado endpoints para manejar personajes, gestionar votaciones y obtener estadísticas, como identificar al personaje más votado. También se incluye una API relacionada con Naruto.
+- **Interacción con la API**: Se han implementado endpoints para manejar personajes, gestionar votaciones y obtener Personsajes con mas likes y dislikes, como identificar al personaje más votado. También se incluye una API extra relacionada con Naruto.
+  ### endpoints realizados
+  ```
+   * Personaje con mas like  🆗
+   * Personaje con mas dislike 🆗
+   * Ultimo personaje evaluado 🆗
+   * Estatus de PIKACHU: quiero saber si pikachu (pokemon) existe en DB, los likes, dislike, etc etc (opcional PUNTOS EXTRA) 🆗
+  ```
+
 - **Administración de Personajes**: Facilita la posibilidad de agregar votos y buscar información sobre personajes.
 - **Sistema de Votación**: Los usuarios pueden expresar su opinión sobre los personajes mediante las opciones "me gusta" o "no me gusta".
 - **Estadísticas**: Calcula y presenta información sobre el personaje que ha recibido más votos positivos y negativos, así como el más recientemente votado.
@@ -20,22 +28,33 @@ Implementamos una estructura de carpeta modular
 Para correr este proyecto de manera local sigue los siguientes pasos:
 
 1. Clona el repositorio:
-
-   git clone https://github.com/secasospina/backend-app
+  En nuestra  terminal corremos el siguiente comando  para clonar este repo
+  
+     `git clone https://github.com/secasospina/backend-app`
    
 2. Instala las dependencias:
-
-   cd backend-app
-   npm install  
+  una vez completado el paso enterior  nos metemos en la carpeta del proyecto e instalamos las dependencias asi
+   * cd backend-app 
+   * npm install  
+  al ejecutar `cd backend-app ` nos estamos moviendo al directorio, si esta no es su ruta solo de dirige a ella 
+  al ejecutar el comando `npm install` estamos bajando las dependecias usadas de nuestro proyecto
 
 3. Agregando las variables de entorno al proyecto.
+  Las variables de entorno son muy necesarias para mantener informacion sensible por eso se usan e aqui el paso a paso de como añadirlas
+  ```
+    1) crea un archivo que se llame .env en la raiz de tu proyecto
+    2) una vez agregado agrega en tu archivo 
+      MONGO_URI = VALOR_MANDADO_POR CORREO
+   ```
+  listo tu archivo deberia verse algo asi 
+  ```
+    MONGO_URI = mongodb+srv://....
 
-- No olvides crear un archivo .env en el que debes incluir los valores necesarios para el proyecto de backend-app.
-- Establece tu base de datos en MongoDB Atlas, consultando la sección "Configurar MongoDB Atlas para Aceptar Solicitudes Desde Cualquier IP" que aparece a continuación.
 
-5. Ejecuta el servidor de desarrollo:
+  ```
+5. Ejecutamos  el proyecto en modo desarrollo:
 
-   npm run start:dev
+    ` npm run start:dev`
 
 ## APIs Utilizadas
 
@@ -43,4 +62,10 @@ Para correr este proyecto de manera local sigue los siguientes pasos:
 - [API de Pokémon](https://pokeapi.co/)
 - [API de Superhéroes](https://superheroapi.com/)
 - [API de Naruto](https://narutodb.xyz/)
+
+
+## Documentacion en Postman 
+  * Aqui encontraras el enlace a los endpoints del proyecto
+- [Ver documentacion](https://documenter.getpostman.com/view/38942824/2sAXxS8X9e)
+
 
